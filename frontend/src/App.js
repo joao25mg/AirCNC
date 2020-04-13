@@ -8,7 +8,7 @@ import Routes from './routes';
 function App() {
   return (
     <div className="container">
-      <img src={logo} alt="AirCNC" link="http://192.168.0.7:3000"/>
+      <img src={logo} alt="AirCNC" />
 
       <div className="content">
         <Routes />
