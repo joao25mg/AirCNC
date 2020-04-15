@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Alert, TouchableOpacity, SafeAreaView, AsyncStorage, TextInput, Text, StyleSheet } from 'react-native';
+import { Image, Alert, TouchableOpacity, SafeAreaView, AsyncStorage, TextInput, Text, StyleSheet } from 'react-native';
+
+import logo from '../assets/logo.png';
 
 import api from '../services/api';
 
@@ -27,6 +29,7 @@ export default function Book({ navigation }) {
 
     return (
         <SafeAreaView style={styles.container}>
+            <Image style={styles.logo} source={logo} />
             <Text style={styles.label}>DATA DE INTERESSE *</Text>            
             <TextInput
                 style={styles.input}
@@ -53,6 +56,11 @@ const styles = StyleSheet.create({
     container: {
         paddingTop: 30,
         margin: 30
+    },
+
+    logo: {
+        alignSelf: 'center',
+        marginBottom: 40
     },
 
     label: {
