@@ -19,7 +19,7 @@ function SpotList({ tech, navigation }) {
     }, []);
 
 function handleNavigate(id) {
-    navigation.navigate('Book');
+    navigation.navigate('Book', { id });
 }
 
     return (
@@ -37,7 +37,7 @@ function handleNavigate(id) {
                         <Image style={styles.thumbnail} source={{ uri: item.thumbnail_url }} />
                         <Text style={styles.company}>{item.company}</Text>
                         <Text style={styles.price}>{item.price ? `R$${item.price}/dia` : 'GRATUITO'}</Text>
-                        <TouchableOpacity onPress={handleNavigate} style={styles.button}>
+                        <TouchableOpacity onPress={() => handleNavigate(item._id)} style={styles.button}>
                             <Text style={styles.buttonText}>
                                 Solicitar reservar
                             </Text>    
@@ -51,13 +51,13 @@ function handleNavigate(id) {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 30,
+        marginTop: 10,
     },
 
     title: {
         fontSize: 20,
         color: '#444',
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
         marginBottom: 15
     },
 
@@ -66,11 +66,13 @@ const styles = StyleSheet.create({
     },
    
     list: {
-        paddingHorizontal: 20,
+        paddingHorizontal: 15,
+        marginRight: 5
+
     },
 
     listItem: {
-        marginRight: 15,
+        marginRight: 20,
     },
 
     thumbnail: {
